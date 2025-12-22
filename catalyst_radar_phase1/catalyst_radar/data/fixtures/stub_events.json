@@ -1,0 +1,141 @@
+[
+  {
+    "source_name": "US Senate Financial Disclosures (stub)",
+    "source_url": "https://example.com/senate-disclosure/123",
+    "source_type": "GOV",
+    "discovered_timestamp_utc": "2025-12-11T15:00:00+00:00",
+    "payload": {
+      "event_type": "POLITICIAN_DISCLOSURE",
+      "title": "Disclosure: Example Senator reports purchase of XOM",
+      "summary": "A public disclosure filing reports a BUY transaction involving Exxon Mobil.",
+      "event_timestamp_utc": "2025-12-10T00:00:00+00:00",
+      "entities": ["Exxon Mobil Corporation"],
+      "tickers": ["XOM"],
+      "theme_tags": ["OIL_GAS"],
+      "confidence": "MEDIUM",
+      "confidence_rationale": "Public filing with identifiable issuer; transaction window disclosed.",
+      "credibility_score": 0,
+      "freshness_score": 0,
+      "materiality_score": 0,
+      "overall_score": 0,
+      "politician_disclosure": {
+        "reporting_person": "Example Senator",
+        "filing_date": "2025-12-11",
+        "transaction_date_or_range": "2025-12-10",
+        "transaction_type": "BUY",
+        "amount_band": "$100,001 - $250,000",
+        "asset_description": "Exxon Mobil Corporation common stock"
+      }
+    }
+  },
+  {
+    "source_name": "Defense Contract Announcements (stub)",
+    "source_url": "https://example.com/dod-award/ABC-456",
+    "source_type": "GOV",
+    "discovered_timestamp_utc": "2025-12-18T14:30:00+00:00",
+    "payload": {
+      "event_type": "FED_AWARD",
+      "title": "DoD announces contract award involving LMT",
+      "summary": "A public contract announcement states an awarded amount and contract identifier.",
+      "event_timestamp_utc": "2025-12-18T00:00:00+00:00",
+      "entities": ["Lockheed Martin Corporation"],
+      "tickers": ["LMT"],
+      "theme_tags": ["DEFENSE"],
+      "confidence": "HIGH",
+      "confidence_rationale": "Official government award announcement with contract identifiers.",
+      "credibility_score": 0,
+      "freshness_score": 0,
+      "materiality_score": 0,
+      "overall_score": 0,
+      "federal_award": {
+        "award_id": "ABC-456",
+        "agency": "DoD",
+        "obligated_amount": "TBD",
+        "ceiling_amount": "TBD",
+        "contract_type": "TBD",
+        "period_of_performance": "TBD",
+        "prime_or_sub": "TBD"
+      }
+    }
+  },
+  {
+    "source_name": "Reputable Media (stub)",
+    "source_url": "https://example.com/news/geopolitics/789",
+    "source_type": "REPUTABLE_MEDIA",
+    "discovered_timestamp_utc": "2025-12-17T12:00:00+00:00",
+    "payload": {
+      "event_type": "GEOPOLITICS_NEWS",
+      "title": "Policy update impacts energy shipping routes",
+      "summary": "Public reporting describes a policy action with potential impacts to energy logistics.",
+      "event_timestamp_utc": "2025-12-17T00:00:00+00:00",
+      "entities": ["Energy sector"],
+      "tickers": ["XOM"],
+      "theme_tags": ["SHIPPING", "OIL_GAS"],
+      "confidence": "MEDIUM",
+      "confidence_rationale": "Single reputable outlet; additional corroboration TBD.",
+      "credibility_score": 0,
+      "freshness_score": 0,
+      "materiality_score": 0,
+      "overall_score": 0,
+      "geopolitics": {
+        "region_country_tags": ["TBD"],
+        "policy_action": "TBD",
+        "affected_commodities": ["oil"]
+      },
+      "corroboration": {
+        "corroborating_sources": [],
+        "contradiction_flags": []
+      }
+    }
+  },
+  {
+    "source_name": "Issuer Press Release (stub)",
+    "source_url": "https://example.com/press/energy/permit",
+    "source_type": "PRESS_RELEASE",
+    "discovered_timestamp_utc": "2025-12-16T16:00:00+00:00",
+    "payload": {
+      "event_type": "ENERGY_RESOURCES",
+      "title": "Company announces permitting milestone",
+      "summary": "A press release states a permitting milestone for an operational energy project.",
+      "event_timestamp_utc": "2025-12-16T00:00:00+00:00",
+      "entities": ["EOG Resources, Inc."],
+      "tickers": ["EOG"],
+      "theme_tags": ["OIL_GAS"],
+      "confidence": "MEDIUM",
+      "confidence_rationale": "Issuer press release; independent confirmation TBD.",
+      "credibility_score": 0,
+      "freshness_score": 0,
+      "materiality_score": 0,
+      "overall_score": 0
+    }
+  },
+  {
+    "source_name": "Issuer Press Release (stub)",
+    "source_url": "https://example.com/press/preop/finance",
+    "source_type": "PRESS_RELEASE",
+    "discovered_timestamp_utc": "2025-12-15T18:00:00+00:00",
+    "payload": {
+      "event_type": "PREOP_MILESTONE",
+      "title": "Project finance milestone announced",
+      "summary": "A press release describes a public milestone reducing time-to-cashflow.",
+      "event_timestamp_utc": "2025-12-15T00:00:00+00:00",
+      "entities": ["MP Materials Corp."],
+      "tickers": ["MP"],
+      "theme_tags": ["CRITICAL_MINERALS", "MINING"],
+      "confidence": "MEDIUM",
+      "confidence_rationale": "Issuer statement; financing terms and counterparties TBD.",
+      "credibility_score": 0,
+      "freshness_score": 0,
+      "materiality_score": 0,
+      "overall_score": 0,
+      "preop_milestone": {
+        "project_name": "TBD",
+        "location": "TBD",
+        "milestone_type": "financing closed",
+        "expected_first_production_date": "TBD",
+        "capex_funding_details": "TBD",
+        "offtake_counterparty": "TBD"
+      }
+    }
+  }
+]

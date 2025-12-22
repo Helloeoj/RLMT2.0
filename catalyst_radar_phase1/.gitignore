@@ -1,0 +1,26 @@
+# Secrets
+.env
+.env.*
+*.key
+secrets.*
+config.local.*
+credentials.*
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Logs/output
+*.log
+catalyst_radar/out/*.json
+catalyst_radar/out/*.jsonl
+
+# OS/editor
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
