@@ -1,0 +1,192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CanonicalEvent",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_type",
+    "title",
+    "summary",
+    "event_timestamp_utc",
+    "discovered_at_utc",
+    "source_type",
+    "source_name",
+    "source_url",
+    "source_hash",
+    "event_fingerprint",
+    "entities",
+    "tickers",
+    "theme_tags",
+    "confidence",
+    "credibility_score",
+    "freshness_score",
+    "materiality_score",
+    "overall_score"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Surrogate UUID"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "POLITICIAN_DISCLOSURE",
+        "FED_AWARD",
+        "GEOPOLITICS_NEWS",
+        "ENERGY_RESOURCES",
+        "PREOP_MILESTONE",
+        "OTHER_PUBLIC_CATALYST"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_timestamp_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "discovered_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "GOV",
+        "ISSUER_FILING",
+        "PRESS_RELEASE",
+        "NEWSWIRE",
+        "REPUTABLE_MEDIA",
+        "OTHER_PUBLIC"
+      ]
+    },
+    "source_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_url": {
+      "type": "string",
+      "pattern": "^https://"
+    },
+    "source_hash": {
+      "type": "string",
+      "contentEncoding": "base64",
+      "description": "SHA-256 bytes (base64 in JSON)"
+    },
+    "event_fingerprint": {
+      "type": "string",
+      "contentEncoding": "base64",
+      "description": "SHA-256 bytes (base64 in JSON)"
+    },
+    "entities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "entity_type",
+          "role"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "entity_type": {
+            "type": "string",
+            "enum": [
+              "PERSON",
+              "COMPANY",
+              "AGENCY",
+              "PROJECT"
+            ]
+          },
+          "role": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "tickers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "theme_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence": {
+      "type": "object",
+      "required": [
+        "level",
+        "rationale"
+      ],
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "LOW",
+            "MEDIUM",
+            "HIGH"
+          ]
+        },
+        "rationale": {
+          "type": "string"
+        }
+      }
+    },
+    "credibility_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "freshness_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "materiality_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "overall_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "corroborating_sources": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "contradiction_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "object"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "additionalProperties": true
+}
