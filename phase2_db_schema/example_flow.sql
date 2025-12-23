@@ -68,7 +68,7 @@ FROM rd;
 
 -- link
 INSERT INTO event_ticker_links (event_id, ticker_id, link_role, map_confidence, map_method, map_rationale)
-SELECT e.event_id, t.ticker_id, 'PRIMARY', 90, 'NAME_MATCH', 'Issuer matched to ticker entity'
+SELECT e.event_id, t.ticker_id, 'PRIMARY', 90, 'EXACT_ALIAS', 'Issuer matched to ticker entity'
 FROM events e, t
 WHERE e.source_url='https://example.com/story/123'
 ON CONFLICT (event_id, ticker_id) DO NOTHING;
